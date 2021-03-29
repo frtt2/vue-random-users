@@ -5,6 +5,7 @@ import express from "express";
 import { v4 as uuidv4 } from 'uuid';
 
 const app = express();
+const port = 3000
 
 app.use(cors());
 
@@ -53,7 +54,7 @@ app.delete('/users/:userId', (req, res) => {
 
 
 
-app.listen(process.env.PORT, () =>
+app.listen(port, () =>
   console.log(
     `¡Aplicación escuchand ${process.env.PORT}!`
   )
