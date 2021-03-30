@@ -83,9 +83,6 @@ export default {
       then(() => {
         this.getFavourites()
       })
-      .then(()=>{
-        this.matchFavourites()
-      })
       .catch(() => {
         this.error = true
       });
@@ -95,9 +92,6 @@ export default {
       Vue.axios("http://localhost:3000/users").then((result) => {
         this.favouritesUsers = result.data
       })
-      .then((res) => {
-        console.log(res)
-      })
       .catch(() => {
         this.error = true
       });
@@ -106,9 +100,6 @@ export default {
       Vue.axios.delete("http://localhost:3000/users/"+id).
       then(() => {
         this.getFavourites()
-      })
-      .then(()=>{
-        this.matchFavourites()
       })
       .catch(() => {
         this.error = true
